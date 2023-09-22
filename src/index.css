@@ -1,0 +1,327 @@
+/* Normalizing */
+*,
+::before,
+::after{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+ul,
+ol,
+li{
+  list-style: none;
+}
+img{
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body,
+#root{
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  background: #eeeeee;
+  font-family: 'Montserrat', sans-serif;
+}
+/* End normalizing */
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+.page {
+  flex: auto;
+  padding-top: 60px;
+  display: flex;
+}
+.container {
+  max-width: 800px;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+.header {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: gray;
+}
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+.header_left > *:not(:last-child) {
+  padding-right: 20px;
+}
+.header_right > *:not(:last-child) {
+  padding-right: 20px;
+}
+.user_name {
+  color: white;
+}
+.user_name:hover {
+  cursor: pointer;
+}
+.create_form {
+  margin: 0 auto 10px;
+  display: flex;
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, .1);
+}
+.create_form > *:not(:last-child) {
+  margin: 0 4px 0 0;
+}
+.main_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.create_form input[type="text"] {
+  padding: 15px;
+  width: 100%;
+  height: 45px;
+  font-size: 20px;
+}
+.create_form input[type="text"]:focus {
+  color: inherit;
+  background-color: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+input[type="submit"] {
+  height: 45px;
+  padding: 0 15px;
+  font-size: 20px;
+  background: #435cfc;
+  color: #eeeeee;
+  border: 0;
+  font-family: 'Raleway', sans-serif;
+  align-self: flex-end;
+  width: fit-content;
+}
+input[type="submit"]:hover {
+  background: #5d73f8;
+  cursor: pointer;
+}
+input[type="submit"]:active {
+  border-color: rgba(0, 123, 255, 0.25);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.search_form {
+  margin: 0 auto;
+  width: fit-content;
+}
+.search_input {
+  font-size: inherit;
+  padding: 10px;
+  min-width: 350px;
+  height: fit-content;
+  margin-bottom: 15px;
+}
+.post_item {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+.post_item > *:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+.about_page,
+.home_page {
+  margin: auto;
+}
+.footer {
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* todo item */
+.todo_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, .1);
+}
+.todo_item > *:not(:last-child) {
+  padding: 0 10px 0 0;
+}
+.todo_item_content > *:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+.todo_item_data {
+  display: flex;
+}
+.todo_item_data .checkmark {
+  top: -2px;
+  height: 20px;
+  width: 20px;
+}
+.todo_item_data .custom_checkbox {
+  padding-left: 30px;
+  cursor: inherit;
+}
+.todo_item_data .custom_checkbox .checkmark:after {
+  left: 6px;
+  top: 1px;
+}
+.todo_item_buttons {
+  display: flex;
+}
+.todo_item_buttons > *:not(:first-child) {
+  margin-left: 4px;
+}
+.todo_item_buttons .todo_item_button {
+  height: 35px;
+  font-size: 14px;
+}
+
+/* modal */
+.modal_outer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_inner {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 95vh;
+  background-color: #fff;
+  border-radius: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: #ababab #e7e7e7;
+}
+.modal_inner::-webkit-scrollbar {
+  width: 0.35vw;
+}
+.modal_inner::-webkit-scrollbar-thumb {
+  background-color: #ababab;
+}
+.modal_inner::-webkit-scrollbar-track {
+  background-color: #e7e7e7;
+}
+
+/* update form */
+.update_form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 300px;
+}
+.update_form > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+.update_form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  height: 80px;
+  border: 1px solid #ced4da;
+}
+.update_form textarea:focus {
+  color: inherit;
+  background-color: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.update_form input[type="submit"] {
+  height: 35px;
+  font-size: 14px;
+}
+
+/* custom checkbox */
+
+/* Customize the label (the container) */
+.custom_checkbox {
+  position: relative;
+  display: inline-block;
+  line-height: 138%;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: fit-content;
+}
+/* Hide the browser's default checkbox */
+.custom_checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+/* On mouse-over, add a grey background color */
+.custom_checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+/* When the checkbox is checked, add a blue background */
+.custom_checkbox input:checked ~ .checkmark {
+  background-color: #435cfc;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.custom_checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+.custom_checkbox .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 9px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* custom checkbox end */
